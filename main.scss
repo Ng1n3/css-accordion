@@ -87,11 +87,31 @@ select {
 
   &__icon {
     font-size: 1.8rem;
+    transition: .3s;
   }
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &:hover {
+        cursor: pointer
+    }
   }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+    &[aria-hidden="false"] {
+        grid-template-rows: 1fr;
+    }
+
+    & > div {
+        overflow: hidden;
+    }
+  }
+
+
 }

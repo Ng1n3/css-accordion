@@ -86,6 +86,8 @@ select {
 }
 .accordion__icon {
   font-size: 1.8rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .accordion__header {
   display: -webkit-box;
@@ -97,4 +99,20 @@ select {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.accordion__header:hover {
+  cursor: pointer;
+}
+.accordion__content {
+  display: grid;
+  grid-template-rows: 0fr;
+  -webkit-transition: grid-template-rows 500ms;
+  transition: grid-template-rows 500ms;
+  transition: grid-template-rows 500ms, -ms-grid-rows 500ms;
+}
+.accordion__content[aria-hidden=false] {
+  grid-template-rows: 1fr;
+}
+.accordion__content > div {
+  overflow: hidden;
 }
