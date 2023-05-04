@@ -70,6 +70,11 @@ select {
   margin-inline: auto;
 }
 
+.head-title {
+    text-align: center;
+    margin: 3rem 0;
+}
+
 .accordion {
   background: #121212;
   color: #effeef;
@@ -104,14 +109,22 @@ select {
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 500ms;
-    &[aria-hidden="false"] {
-        grid-template-rows: 1fr;
-    }
 
     & > div {
         overflow: hidden;
     }
+
+    &[aria-hidden="false"] {
+        grid-template-rows: 1fr;
+    }
+
   }
+
+  &__icon[aria-expanded="true"]::before,
+  &__icon[aria-expanded="true"]::end, {
+    transform: rotate(45deg)
+  }
+  
 
 
 }

@@ -71,6 +71,11 @@ select {
   margin-inline: auto;
 }
 
+.head-title {
+  text-align: center;
+  margin: 3rem 0;
+}
+
 .accordion {
   background: #121212;
   color: #effeef;
@@ -110,9 +115,13 @@ select {
   transition: grid-template-rows 500ms;
   transition: grid-template-rows 500ms, -ms-grid-rows 500ms;
 }
+.accordion__content > div {
+  overflow: hidden;
+}
 .accordion__content[aria-hidden=false] {
   grid-template-rows: 1fr;
 }
-.accordion__content > div {
-  overflow: hidden;
+.accordion__icon[aria-expanded=true]::before, .accordion__icon[aria-expanded=true]::end {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
